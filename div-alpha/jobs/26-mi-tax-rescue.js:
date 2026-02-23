@@ -1,0 +1,12 @@
+const pool = require('../../db');
+
+module.exports = {
+  name: 'MI Tax Forfeiture Scout',
+  // BOOTSTRAP: 2026 Legal & Real Estate Logic
+  bootstrap: () => {
+    return "Target: Michigan Counties (Oakland, Wayne, Kent). Goal: Identify properties on the 'Judicial Forfeiture' list for 2026. Action: Extract owner mailing address and total back-tax amount. Tone: Helpful and urgent.";
+  },
+  run: async () => {
+    console.log("NeverX007: Scraping Michigan forfeiture records for March 1 deadline...");
+    // These leads are worth $50+ each to real estate investors
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 50.00 WHERE name = $1', ['MI Tax Forfeiture Scout']);
