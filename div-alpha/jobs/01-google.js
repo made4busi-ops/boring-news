@@ -1,5 +1,4 @@
 const pool = require('../../db');
-
 module.exports = {
   name: 'Google Review Responder',
   bootstrap: () => {
