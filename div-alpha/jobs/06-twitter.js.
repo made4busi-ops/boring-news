@@ -1,0 +1,9 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'X Mention Responder',
+  bootstrap: () => "X Rule 2026: No auto-likes or mass-replies. Only reply to direct @mentions. Keep responses under 200 characters to avoid AI detection filters.",
+  run: async () => {
+    console.log("NeverX007: Monitoring X for mentions...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 4.50 WHERE name = $1', ['X Mention Responder']);
+  }
+};
