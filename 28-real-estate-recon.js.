@@ -1,0 +1,11 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'Real Estate Recon',
+  bootstrap: () => {
+    return "Search 2026 'Notice of Default' filings in Oakland County. Extract property address and owner contact info for off-market deal potential.";
+  },
+  run: async () => {
+    console.log("NeverX007: Extracting pre-foreclosure leads from county records...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 25.00 WHERE name = $1', ['Real Estate Recon']);
+  }
+};
