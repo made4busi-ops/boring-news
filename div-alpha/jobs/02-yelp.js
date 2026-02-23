@@ -1,5 +1,4 @@
 const pool = require('../../db');
-
 module.exports = {
   name: 'Yelp Sentiment Scout',
   bootstrap: () => {
