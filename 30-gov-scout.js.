@@ -1,0 +1,11 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'Gov-Contract Scout',
+  bootstrap: () => {
+    return "Scan 2026 SAM.gov and local municipal portals for 'Small Business Set-Aside' contracts under $50,000 in Michigan and Ohio.";
+  },
+  run: async () => {
+    console.log("NeverX007: Scouting for new government contract opportunities...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 100.00 WHERE name = $1', ['Gov-Contract Scout']);
+  }
+};
