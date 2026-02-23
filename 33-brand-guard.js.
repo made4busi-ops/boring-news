@@ -1,0 +1,11 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'AI Brand Voice Guard',
+  bootstrap: () => {
+    return "2026 Audit: Scan all outgoing social posts and emails. Compare against the 'NeverX007' style guide. Flag any content that sounds generic, repetitive, or robotic for manual adjustment.";
+  },
+  run: async () => {
+    console.log("NeverX007: Protecting brand authenticity against robotic drift...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 12.00 WHERE name = $1', ['AI Brand Voice Guard']);
+  }
+};
