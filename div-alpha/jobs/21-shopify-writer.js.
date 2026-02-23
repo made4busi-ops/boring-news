@@ -1,0 +1,9 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'Shopify AI Rewriter',
+  bootstrap: () => "Feb 2026 Strategy: Use 'Agentic AI' style. Focus on structured attributes for ChatGPT/Perplexity search. Rewrite descriptions to be conversational, not just a list of features.",
+  run: async () => {
+    console.log("NeverX007: Updating Shopify descriptions for AI search visibility...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 9.00 WHERE name = $1', ['Shopify AI Rewriter']);
+  }
+};
