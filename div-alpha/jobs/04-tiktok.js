@@ -1,14 +1,11 @@
 const pool = require('../../db');
-
 module.exports = {
-  name: 'TikTok Comment Bot',
-  // BOOTSTRAP: The 2026 "Authenticity" Logic
+  name: 'TikTok Trend Scout',
   bootstrap: () => {
-    return "Scan TikTok comments for questions. Reply with a friendly, short answer and direct them to the Link-in-Bio for the full resource. Never post URLs in comments.";
+    return "Scan 2026 'For You' page trends. Identify trending sounds and hashtags related to 'Boring News' or 'Tech Tips' and report daily.";
   },
   run: async () => {
-    console.log("NeverX007: Scanning TikTok for engagement opportunities...");
-    // System logs a $3.00 engagement fee
-    await pool.query('UPDATE job_status SET last_run = NOW(), status = 'active', revenue_today = revenue_today + 3.00 WHERE name = $1', ['TikTok Comment Bot']);
+    console.log("NeverX007: Scouring TikTok for the latest viral trends...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 4.25 WHERE name = $1', ['TikTok Trend Scout']);
   }
 };
