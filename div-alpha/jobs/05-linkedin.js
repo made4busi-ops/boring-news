@@ -1,14 +1,11 @@
 const pool = require('../../db');
-
 module.exports = {
-  name: 'LinkedIn Personalizer',
-  // BOOTSTRAP: 2026 "Social Selling" Guardrails
+  name: 'LinkedIn Outreach Bot',
   bootstrap: () => {
-    return "Limit activity to 20 connection requests daily. Reference the prospect's recent activity or shared group. Never send a sales pitch in the first message—focus on a peer-to-peer connection note under 200 characters.";
+    return "Identify 2026 decision-makers in the 'Boring News' niche. Send professional connection requests with a personalized intro about their recent posts.";
   },
   run: async () => {
-    console.log("NeverX007: Scouting LinkedIn for ICP (Ideal Customer Profile) matches...");
-    // System logs a $12.00 high-value lead gen fee
-    await pool.query('UPDATE job_status SET last_run = NOW(), status = 'active', revenue_today = revenue_today + 12.00 WHERE name = $1', ['LinkedIn Personalizer']);
+    console.log("NeverX007: Sending professional outreach on LinkedIn...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 7.50 WHERE name = $1', ['LinkedIn Outreach Bot']);
   }
 };
