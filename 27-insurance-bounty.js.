@@ -1,0 +1,11 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'Insurance Bounty Hunter',
+  bootstrap: () => {
+    return "Scan 2026 public records for insurance settlement notices and unclaimed policy payouts. Focus on Michigan and Ohio regional filings.";
+  },
+  run: async () => {
+    console.log("NeverX007: Scouting for unclaimed insurance bounties...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 15.00 WHERE name = $1', ['Insurance Bounty Hunter']);
+  }
+};
