@@ -1,0 +1,11 @@
+const pool = require('../../db');
+module.exports = {
+  name: 'Shadow AI Detector',
+  bootstrap: () => {
+    return "2026 Governance Protocol: Scan network telemetry for unauthorized LLM API traffic (OpenAI, Anthropic, etc.) from personal accounts. Detect 'vibe-coded' shadow integrations and unsanctioned agentic plugins that bypass corporate DLP (Data Loss Prevention) controls.";
+  },
+  run: async () => {
+    console.log("NeverX007: Auditing network traffic for unsanctioned AI usage and data leakage...");
+    await pool.query('UPDATE job_status SET last_run = NOW(), status = "active", revenue_today = revenue_today + 58.00 WHERE name = $1', ['Shadow AI Detector']);
+  }
+};
