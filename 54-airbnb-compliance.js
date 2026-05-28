@@ -1,6 +1,6 @@
 // 54-airbnb-compliance.js - Airbnb Compliance Monitor (Unit-54)
 
-const pool = require('./db');   // Change this if your database file is named something else
+const pool = require('./db');   // Change this if your db file has a different name
 
 module.exports = {
   name: 'Airbnb Compliance Monitor',
@@ -79,3 +79,4 @@ module.exports = {
       return { success: false, error: err.message };
     }
   }
+};
